@@ -1,69 +1,23 @@
-# 🎓 Proyecto Universitario: Interfaz de IA Resiliente con Streamlit
+# Reporte de Análisis del Dataset del Titanic con Agente IA (Local LLM)
 
-Este proyecto implementa una aplicación web local que integra un modelo de lenguaje de Meta AI con un conjunto de datos, utilizando una arquitectura preparada para tolerar fallos de infraestructura.
+Este repositorio contiene la arquitectura de código completa para el informe interactivo del Titanic. El proyecto implementa una solución híbrida de análisis estadístico tradicional asistida por Inteligencia Artificial en un entorno privado.
 
----
+##  Enlace del Proyecto de Entrega
+* **Aplicación en Vivo en la Nube:** [https://streamlit.app](https://streamlit.app)
 
-## 🛠️ 1. Requisitos del Sistema
-* **Versión de Python:** Python 3.10 o superior (Recomendado Python 3.11).
-* **Servidor de Modelos:** Ollama instalado y activo.
-* **Modelo Utilizado:** `llama3.2:3b` (~2.0 GB de peso en disco).
+##  Tecnologías y Arquitectura
+* **Frontend y Tableros:** `Streamlit` para la orquestación de la interfaz gráfica y filtros automáticos.
+* **Procesamiento de Datos:** `Pandas` para la carga y cálculos en caliente sobre la matriz del archivo `dataset.csv`.
+* **Gráficos Estadísticos:** `Matplotlib` enfocado en la distribución dinámica de variables cuantitativas y cualitativas.
+* **Motor del Agente de IA:** Integración local mediante **`Ollama`**, asegurando un procesamiento semántico de consultas en lenguaje natural con total privacidad de datos comerciales (sin consumo de APIs externas de terceros).
 
----
+##  Estructura Principal del Proyecto
+* `app.py`: Archivo core de la aplicación que administra las métricas de la interfaz, lógicas `if/elif` prioritarias para la segmentación de prompts y gráficos interactivos.
+* `dataset.csv`: Base de datos origen que almacena la matriz de 891 registros de pasajeros del Titanic.
+* `requirements.txt`: Archivo de configuración que contiene las dependencias del ecosistema Python necesarias para el correcto despliegue del servidor.
 
-## 🚀 2. Configuración del Entorno Local
-
-Siga estos comandos en orden secuencial dentro de su terminal para clonar el repositorio y levantar el entorno:
-
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com
-cd TU_REPOSITORIO
-
-# 2. Creación del entorno virtual aislado
-python -m venv env
-
-# 3. Activación del entorno virtual
-# En Windows (PowerShell):
-.\env\Scripts\Activate.ps1
-# En Windows (CMD clásico):
-.\env\Scripts\activate.bat
-# En macOS / Linux:
-source env/bin/activate
-
-# 4. Actualizar el gestor de paquetes e instalar dependencias
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
----
-
-## 🦙 3. Configuración de Ollama y Descarga del Modelo
-
-1. Descargue e instale la aplicación correspondiente a su sistema operativo desde [ollama.com](https://ollama.com).
-2. Ejecute la aplicación Ollama (asegúrese de ver su icono en la barra de tareas).
-3. Abra una terminal en su sistema y ejecute el comando de aprovisionamiento:
-   ```bash
-   ollama pull llama3.2:3b
-   ```
-
----
-
-## 📊 4. Obtención y Ubicación del Dataset
-
-Para que la aplicación funcione correctamente con los datos solicitados:
-* El archivo de datos debe llamarse **`dataset.csv`**.
-* Debe estar ubicado obligatoriamente dentro de la carpeta llamada **`data`** en la raíz del proyecto.
-* Si el archivo no existe en la ruta `./data/dataset.csv`, la aplicación de Streamlit mostrará una alerta controlada en pantalla indicándole al usuario que debe colocar el archivo allí.
-
----
-
-## 💻 5. Ejecución de la Aplicación
-
-Con el entorno virtual activado (`env`) y Ollama corriendo en segundo plano, ejecute:
-
-```bash
-streamlit run app.py
-```
-
-La aplicación se desplegará automáticamente en su navegador web en la dirección local `http://localhost:8501`.
+##  Capacidades del Modelo Evaluadas en el Video de Entrega
+El agente de IA responde eficientemente y de forma parametrizada a consultas críticas de negocio, tales como:
+1. **Auditoría de Dimensiones:** Extracción en vivo del tamaño exacto de la matriz (891 registros × 12 columnas).
+2. **Cálculo de Tasa Macroeconómica/Supervivencia:** Análisis dinámico del porcentaje general de personas rescatadas (38.38%).
+3. **Análisis Demográfico:** Correlación estadística basada en políticas de evacuación por variables de género.
