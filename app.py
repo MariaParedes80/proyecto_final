@@ -49,10 +49,10 @@ try:
             st.pyplot(fig)
 
     # =======================================================
-    # 5. SECCIÓN DEL AGENTE IA (Prioridades corregidas para Ollama)
+    # 5. SECCIÓN DEL AGENTE IA (Prioridades corregidas para Ollama 3.2:3b)
     # =======================================================
     st.write("---")  # Línea divisoria visual
-    st.subheader(" Consulta Avanzada con Agente IA (Powered by Ollama3.2:3b)")
+    st.subheader(" Consulta Avanzada con Agente IA (Ollama3.2:3b)")
 
     # Caja de texto única con identificador (key) para evitar duplicados
     pregunta_usuario = st.text_input(
